@@ -36,9 +36,13 @@ document.getElementById("miForm").addEventListener("submit", function(e){
     subcategoria: this.subcategoria.value
   };
 
-  fetch(URL, {
+    fetch(URL, {
     method: "POST",
-    body: JSON.stringify(data)
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify(data), 
+    redirect:"follow"
   })
   .then(res => res.text())
   .then(res => {
