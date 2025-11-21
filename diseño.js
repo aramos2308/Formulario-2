@@ -23,7 +23,7 @@ categoriaSelect.addEventListener("change", function() {
 });
 
 
-const URL = "https://script.google.com/macros/s/AKfycbztsBLB4y4bzSOk54AvuOd2rO-l9vUHpaTR6z_8djuO-fFxB7rAgVHdPYnjLysd0Zj66A/exec"; 
+const URL = "https://script.google.com/macros/s/AKfycbwJgP1_wCfQLPzJ9FSDSBVY898jmfdl9_r5c-aFl6oUYNodV9_VtKqwwRUpJq54qKt7rA/exec"; 
 
 document.getElementById("miForm").addEventListener("submit", function(e){
   e.preventDefault();
@@ -36,7 +36,7 @@ document.getElementById("miForm").addEventListener("submit", function(e){
     subcategoria: this.subcategoria.value
   };
 
-    fetch(URL, {
+  fetch(URL, {
     method: "POST",
     headers: {
       "Content-Type": "text/plain;charset=utf-8"
