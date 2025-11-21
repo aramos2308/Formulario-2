@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="body.css">
+</head>
+<body>
+
+  <h2>Formulario</h2>
+
+  <form id="miForm">
+
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required>
+
+    <label>Apellido:</label>
+    <input type="text" name="apellido" required>
+
+    <label>Mensaje:</label>
+    <textarea name="mensaje" rows="3" ></textarea>
+
+    <label>Categoría:</label>
+    <select id="categoria" name="categoria" required>
+      <option value="">-- Seleccionar --</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+    </select>
+
+    <label>Subcategoría:</label>
+    <select id="subcategoria" name="subcategoria" required>
+      <option value="">-- Selecciona categoría primero --</option>
+    </select>
+
+    <button type="submit">Enviar</button>
+
+  </form>
+
+  <script src="diseño.js"></script>
+</body>
+</html>
