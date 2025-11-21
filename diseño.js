@@ -23,7 +23,7 @@ categoriaSelect.addEventListener("change", function() {
 });
 
 
-const URL = "https://script.google.com/macros/s/AKfycbwJgP1_wCfQLPzJ9FSDSBVY898jmfdl9_r5c-aFl6oUYNodV9_VtKqwwRUpJq54qKt7rA/exec"; 
+const URL = "https://script.google.com/macros/s/AKfycbwNidRUYQIRA5ycisvodIfJVxCqXl1BWnrKCaAsrI0Au__54kQQZnBjmIzsYpU-4TjVUw/exec"; 
 
 document.getElementById("miForm").addEventListener("submit", function(e){
   e.preventDefault();
