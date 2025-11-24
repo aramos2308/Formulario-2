@@ -23,7 +23,7 @@ const auth = new GoogleAuth({
 // ID de tu hoja de cálculo
 const SPREADSHEET_ID = '1jAyXeS7gzEbmG3ewfXya03p1yUDK323ivrYePMXbT_M'; 
 // Rango de la hoja de cálculo donde quieres escribir (Hoja1)
-const RANGE = 'Hoja1'; 
+const RANGE = 'Hoja 1'; 
 
 module.exports = async (req, res) => {
     // Solo procesa solicitudes POST
