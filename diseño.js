@@ -8,7 +8,7 @@ const categoriaSelect = document.getElementById("categoria");
 const subSelect = document.getElementById("subcategoria");
 
 
-const URL = "https://script.google.com/macros/s/AKfycbwz3_OJ4fk5hhDhFZldM5qAxYzJxksJo3r_UUy4KRVZTIYbUmQoPBfdBTbn0cammCG6Nw/exec"; 
+const URL = "/api/submit";
 
 
 categoriaSelect.addEventListener("change", function() {
@@ -30,26 +30,30 @@ document.getElementById("miForm").addEventListener("submit", function(e){
   e.preventDefault();
 
   const form = e.target;
-  const formData = new FormData(form);
-
-
+  const data = {
+    nombre: form.nombre.value, 
+    apellido: form.apellido.value, 
+    mensaje: form.mensaje.value, 
+    categoria: form.categoria.value,
+    subcategoria: form.subcategoria.value
+  };
+    
   fetch(URL, {
     method: "POST",
-    body: formData, 
+    headers: {
+      "content-Type": "application/json"
+    },
+    body: JSON.stringify(data), 
     redirect: "follow"
   })
-  .then(res => {
-  
-    if (res.ok) {
-        return res.text();
+  .then(res => res.json()) // Esperamos una respuesta JSON del servidor
+  .then(data => {
+    if (data.success) {
+        alert(" Datos enviados correctamente.");
+        form.reset();
+    } else {
+        throw new Error(data.error || "Error desconocido");
     }
-    
-    throw new Error('Respuesta de red no satisfactoria: ' + res.statusText);
-  })
-  .then(res => {
-
-    alert(" Datos enviados correctamente.");
-    form.reset(); 
   })
   .catch(err => {
     console.error(" Error de Fetch/Apps Script:", err);
