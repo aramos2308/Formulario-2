@@ -8,12 +8,12 @@ const auth = new GoogleAuth({
     credentials: {
         // Se leen de las Variables de Entorno de Vercel
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'), // Importante para las llaves
+        private_key: privateKey.replace(/\\n/g, '\n'),
     },
     scopes: ['https://www.googleapis.com/auth/spreadsheets'], // Permiso para escribir en Sheets
 });
 
-// ID de tu hoja de cálculo
+// ID de hoja de cálculo
 const SPREADSHEET_ID = '1jAyXeS7gzEbmG3ewfXya03p1yUDK323ivrYePMXbT_M'; 
 // Rango de la hoja de cálculo donde quieres escribir (Hoja1)
 const RANGE = 'Hoja1'; 
